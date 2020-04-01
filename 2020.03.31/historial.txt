@@ -1,0 +1,46 @@
+  500  source d:/projects/ort/pnt2/env/Scripts/activate
+  501  curl http://127.0.0.1:5000/
+  502  curl http://127.0.0.1:5000/ -X POST
+  503  curl http://127.0.0.1:5000/ -X DELETE
+  504  curl http://127.0.0.1:5000/ -X PUT
+  505  curl http://127.0.0.1:5000/mezclar -X POST
+  506  curl http://127.0.0.1:5000/mezclar -X POST
+  507  curl http://127.0.0.1:5000/mezclar/ -X POST
+  508  curl http://127.0.0.1:5000/mezclar -X POST
+  509  curl http://127.0.0.1:5000/mezclar -X POST
+  510  curl http://127.0.0.1:5000/mezclar 
+  511  curl http://127.0.0.1:5000/mezclar 
+  512  curl http://127.0.0.1:5000/mezclar 
+  513  curl http://127.0.0.1:5000/mezclar 
+  514  curl http://127.0.0.1:5000/mezclar 
+  515  curl http://127.0.0.1:5000/mezclar 
+  516  curl http://127.0.0.1:5000/mezclar -X POST
+  517  curl http://127.0.0.1:5000/arg?param1=1234&param2=abc
+  518  curl 'http://127.0.0.1:5000/arg?param1=1234&param2=abc'
+  519  curl 'http://127.0.0.1:5000/arg?param1=1234&param2=abc'
+  520  curl 'http://127.0.0.1:5000/arg?param31=1234&param2=abc'
+  521  curl 'http://127.0.0.1:5000/arg/uno'
+  522  curl 'http://127.0.0.1:5000/arg/uno'
+  523  curl 'http://127.0.0.1:5000/arg/uno'
+  524  curl 'http://127.0.0.1:5000/arg/uno/dos'
+  525  curl 'http://127.0.0.1:5000/arg/uno/dos'
+  526  curl http://127.0.0.1:5000/clientes -X POST -F apellido='uno' -F nombre='one'
+  527  curl http://127.0.0.1:5000/clientes -X POST -F apellido='uno' -F nombre='one'
+  528  curl http://127.0.0.1:5000/clientes -X POST -F apellido='uno' -F nombre='one'
+  529  curl http://127.0.0.1:5000/clientes -X POST -F apellio='uno' -F nombre='one'
+  530  curl http://127.0.0.1:5000/clientes -X POST -F apellido='uno' -F nombre='one' -i
+  531  curl http://127.0.0.1:5000/clientes -X POST -F apellio='uno' -F nombre='one'
+  532  curl http://127.0.0.1:5000/clientes -X POST -F apellio='uno' -F nombre='one'
+  533  curl http://127.0.0.1:5000/clientes -X POST -F apellio='uno' -F nombre='one' -i
+  534  curl http://127.0.0.1:9001/crearbase
+  535  curl http://127.0.0.1:9001/departamento -X POST
+  536  curl http://127.0.0.1:9001/departamento -X POST -i
+  537  curl http://127.0.0.1:9001/departamento -X POST -i -F nombre=
+  538  curl http://127.0.0.1:9001/departamento -X POST -i -F nombre=finanzas
+  539  curl http://127.0.0.1:9001/departamento/1
+  540  curl http://127.0.0.1:9001/departamento/1
+  541  curl http://127.0.0.1:9001/departamento/1
+  542  curl http://127.0.0.1:9001/departamento/1
+  543  curl http://127.0.0.1:9001/departamento/1
+  544  curl http://127.0.0.1:9001/departamento/1
+  545  curl http://127.0.0.1:9001/departamento/1 -i
