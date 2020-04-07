@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://swapi.co/api/people/';
+
+        console.log('Consultando....');
+
+        fetch(url)
+            .then(function(respuesta) {
+                if (respuesta.ok) {                
+                    respuesta.json()
+                        .then(function(datos) {
+                            // console.log(datos.results);
+                            datos.results.forEach(element => {
+                                console.log(element.name);
+                            });
+                        }
+                    );
+                } else {
+                    console.log(':(');
+                }
+            }
+        );
+
+        console.log('Consultado.');
+
+
+    </script>
+</body>
+</html>

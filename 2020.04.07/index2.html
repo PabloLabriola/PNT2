@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://swapi.co/api/people/1/';
+
+        console.log('Consultando....');
+
+        let promesaFetch = fetch(url);
+        promesaFetch.then(function(respuesta) {
+            // En respuesta tenemos el objeto Response
+            console.log('Recibi respuesta :)');
+            if (respuesta.ok) {                
+                console.log('todo bien');
+                respuesta.json().then(function(datos) {
+                    
+                    console.log(datos); // Datos ya es un objeto!!
+                    console.log('La altura es:' + datos.height);
+                });
+
+            } else {
+                console.log(':(');
+            }
+        });
+
+        console.log('Consultado.');
+
+
+    </script>
+</body>
+</html>

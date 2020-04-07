@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://www.google.com/search?q=javascript';
+
+        console.log('Consultando....');
+
+        fetch(url)
+            .then(function(respuesta) {
+                if (respuesta.ok) {                
+                    respuesta.text()
+                        .then(function(datos) {
+                            console.log(datos);
+                        }
+                    );
+                } else {
+                    console.log(':(');
+                }
+            }
+        );
+
+        console.log('Consultado.');
+
+
+    </script>
+</body>
+</html>
