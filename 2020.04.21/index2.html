@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo 2</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+
+</head>
+<body>
+    <div id='app'>
+        <h3>El nombre es: {{ nombre }} </h3>
+        <muestraedad edad="20"></muestraedad>
+        <muestraedad edad="30"></muestraedad>
+        <muestraedad edad="40" altura="180"></muestraedad>
+    </div>
+    <script>
+
+        Vue.component('muestraedad', {
+            props: {
+                edad: String,
+                altura: {
+                    type: Number,
+                    default: 170,
+                    required: false,
+                    validator: function(value) {
+                        return value >= 100;
+                    }
+                }
+            },
+            template: '<div><h4>La edad es: {{ edad }}</h4><h4>La altura es: {{ altura }}</h4></div>'
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: 'Juan'
+            }
+        })
+    
+    </script>
+    
+</body>
+</html>

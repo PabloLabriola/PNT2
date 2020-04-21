@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function principal() {
+            let url = 'https://www.google.com/search?q=javascript';
+
+            console.log('Consultando....');
+
+            let datos = await fetch(url);
+            let te = await datos.text();
+
+            console.log(te);
+
+            console.log('Consultado.');
+        }
+        principal();
+        
+    </script>
+</body>
+</html>

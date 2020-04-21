@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo 3</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <mi_componente></mi_componente>
+        <hr/>
+        <mi_componente></mi_componente>
+    </div>
+    <script>
+        Vue.component('mi_componente', {
+            data: function() {
+                return {
+                    nombre: 'Pepe',
+                    apellido: 'Pipi',
+                    edad: 20
+                };
+            },
+            template: '<div v-on:mouseover="cambiarNombre1()" ' +
+                      '     v-on:mouseout="cambiarNombre2()" >' +
+                      '  <h3>{{ nombre }}</h3>' +
+                      '  <input type="text" v-model="nombre" />' +
+                      '</div>',
+            methods: {
+                cambiarNombre1: function() {
+                    this.nombre = 'Martin';
+                },
+                cambiarNombre2: function() {
+                    this.nombre = 'Gabriel';
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: '#app'
+        });
+    
+    </script>
+
+</body>
+</html>

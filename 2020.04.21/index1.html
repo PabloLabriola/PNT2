@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS</title>
+
+    <script type="text/javascript" 
+            src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+
+<body>
+    <h1>Primera APP Vue JS</h1>
+
+    <div id="app">
+        <h3>La Aplicacion Vue</h3>
+        <h4>El nombre es: {{ nombre }}  </h4>
+        <h4>El apellido es: {{ apellido }}  </h4>
+        <h4>Nombre completo: {{ nombreCompleto() }}  </h4>
+        <hr/>
+        Nombre: <input type="text" v-model="nombre" />
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: 'Juan',
+                apellido: 'Pirulo'
+            },
+            methods: {
+                nombreCompleto: function() {
+                    return this.nombre + ' ' + this.apellido;
+                }
+            },
+        });
+
+        window.miapp = app;
+    </script>
+
+</body>
+</html>
