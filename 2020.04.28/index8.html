@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.6/vue-router.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <router-link to='/uno'>Ir a UNO</router-link>
+        <router-link to='/dos'>Ir a DOS</router-link>
+
+        <hr />
+
+       <router-view></router-view>
+
+    </div>
+    
+    <script>
+        const Uno = {
+            template: '<div><h3>Componente UNO</h3></div>'
+        };
+
+        const Dos = {
+            template: '<div><h3>Componente DOS</h3></div>'
+        };
+
+        const routes = [
+            { path: '/uno', component: Uno },
+            { path: '/dos', component: Dos }
+        ];
+
+        const router = new VueRouter({
+            routes: routes
+        });
+
+        var app = new Vue({
+            el: '#app',
+            router
+        });
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

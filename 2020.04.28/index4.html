@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model="pesos" />
+        <input type="text" v-model="dolares" />
+        <input type="text" v-model="cotizacion" />
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                pesos: 0,
+                dolares: 0,
+                cotizacion: 118
+            },
+            watch: {
+                pesos: function(valor) {
+                    this.dolares = valor / this.cotizacion;
+                },
+                dolares: function(valor) {
+                    this.pesos = valor * this.cotizacion;
+                },
+                cotizacion: function(valor) {
+                    this.pesos = this.dolares * valor;
+                }
+            }
+        });
+
+        // let f1 = function() { console.log('1'); }
+        // let f2 = function() { console.log('2'); }
+        // let funciones = [f1, f2];
+        // funciones[0]();
+        // funciones[1]();
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

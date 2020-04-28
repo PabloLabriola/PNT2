@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+       <input type="text" v-model="nombre" />
+       <input type="number" v-model="laEdad" />
+       <hr />
+       <micomponente v-bind:edad="laEdad" apellido="pipi"></micomponente>
+       
+
+    </div>
+    
+    <script>
+        Vue.component('micomponente', {
+            props: {
+                edad: String,
+                apellido: String,
+            },
+            template: '<div><h4>Edad: {{ edad }} </h4></div>'
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: '',
+                laEdad: '0'
+            }
+        });
+
+        // let f1 = function() { console.log('1'); }
+        // let f2 = function() { console.log('2'); }
+        // let funciones = [f1, f2];
+        // funciones[0]();
+        // funciones[1]();
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

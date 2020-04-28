@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <h3>{{ numeroM() }}</h3>
+        <h3>{{ numeroM() }}</h3>
+        <h3>{{ numeroC }}</h3>
+        <h3>{{ numeroC }}</h3>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            methods: {
+                numeroM: function() {
+                    console.log('soyUnMetodo');
+                    return Math.random();
+                },
+            },
+            computed: {     // Propiedades computadas
+                numeroC: function() {
+                    console.log('soyUnaComputed');
+                    return Math.random();
+                }
+            },
+        });
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

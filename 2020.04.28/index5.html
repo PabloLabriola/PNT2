@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model="nombre" />
+        <input type="text" v-model="edad" />
+        
+        <h3 v-if="mostrar">Nombre: {{ nombre }} </h3>
+        
+        <h3 v-if="edad >= 18">Es mayor</h3>
+        <h3 v-else-if="edad >= 16">Ya vota</h3>
+        <h3 v-else>Es menor</h3>
+
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: '',
+                edad: 20,
+                mostrar: false
+            },
+        });
+
+        // let f1 = function() { console.log('1'); }
+        // let f2 = function() { console.log('2'); }
+        // let funciones = [f1, f2];
+        // funciones[0]();
+        // funciones[1]();
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

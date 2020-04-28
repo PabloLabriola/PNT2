@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <h3>{{ soyUnMetodo() }}</h3>
+        <h3>{{ soyOtroMetodo() }}</h3>
+        <h3>{{ soyUnMetodo() }}</h3>
+        <h3>{{ soyUnaComputed }}</h3>
+        <h3>{{ soyUnaComputed }}</h3>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                campo1: 'a',
+                campo2: 'b'
+            },
+            methods: {
+                soyUnMetodo: function() {
+                    console.log('soyUnMetodo');
+                    return this.campo1 + ' ' + this.campo2;
+                },
+                soyOtroMetodo: function() {
+                    console.log('soyOtroMetodo');
+                    return ' -- ' + this.campo2;
+                }
+            },
+            computed: {     // Propiedades computadas
+                soyUnaComputed: function() {
+                    console.log('soyUnaComputed');
+                    return this.campo1 + '.' + this.campo2;
+                }
+            },
+        });
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

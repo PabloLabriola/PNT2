@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+       <ul>
+           <li v-for="nro in valores">
+                {{ nro.numero }} {{ nro.texto }}
+           </li>
+       </ul>
+
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                valores: [
+                    { numero:'1', texto:'uno' },
+                    { numero:'2', texto:'dos' },
+                    { numero:'3', texto:'tres' },
+                    { numero:'4', texto:'cuatro' },
+                    { numero:'5', texto:'cinco' },
+                ]
+            },
+        });
+
+        // let f1 = function() { console.log('1'); }
+        // let f2 = function() { console.log('2'); }
+        // let funciones = [f1, f2];
+        // funciones[0]();
+        // funciones[1]();
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>

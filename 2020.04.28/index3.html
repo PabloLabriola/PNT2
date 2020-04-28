@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js">
+    </script>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model="nombre" />
+        <input type="text" v-model="apellido" />
+        <input type="text" v-model="nombreCompleto" />
+
+        <h3>Nombre: {{ nombre }}</h3>
+        <h3>Apellido: {{ apellido }}</h3>
+        <h3>Nombre Completo: {{ nombreCompleto }}</h3>
+        
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: '',
+                apellido: ''
+            },
+            computed: {     // Propiedades computadas
+                nombreCompleto: {
+                    get: function() {
+                        return this.nombre + ',' + this.apellido;
+                    },
+                    set: function(valor) {
+                        let datos = valor.split(',')
+                        this.nombre = datos[0];
+                        this.apellido = datos[1];
+                    }
+                } 
+            },
+            watch: {
+                nombre: function(valor) {
+                    console.log(valor);
+                }
+            }
+
+        });
+
+        window.miapp = app;
+
+    </script>
+
+</body>
+</html>
